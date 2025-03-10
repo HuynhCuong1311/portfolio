@@ -199,6 +199,7 @@ export const education = [
     date: "Apr 2015 - Dec 2015",
     grade: "9.0",
     desc: "I have completed a comprehensive course covering web development fundamentals and advanced concepts, including:Building and styling web pages using HTML, CSS.Server-side scripting with PHP and implementing MVC (Model-View-Controller) architecture.Database design and management with MySQL.Developing and deploying web applications using the Zend Framework.Gained practical experience through hands-on projects, enhancing skills in building scalable, maintainable web applications.",
+    degree: "Certificate in HTML, CSS, PHP, MySQL, Zend Framework Development",
   },
   {
     id: 2,

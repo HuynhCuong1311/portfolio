@@ -1,11 +1,11 @@
 import React, { useRef, useState, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
-import * as random from "maath/random/dist/maath-random.esm";
+import * as random from "maath/random";
 import styled from "styled-components";
 import { BufferGeometry, Material, Points as ThreePoints } from "three";
 
-interface StartsProps {}
+interface StartsProps { }
 
 const StyledCanvasWrapper = styled.div`
   width: 100%;
@@ -17,7 +17,7 @@ const StyledCanvasWrapper = styled.div`
 const Starts = (props: StartsProps) => {
   const ref = useRef<ThreePoints<BufferGeometry, Material | Material[]>>(null);
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(5000), { radius: 1.2 })
+    random.inSphere(new Float32Array(5000), { radius: 1.2 }) as Float32Array
   );
   useFrame((state, delta) => {
     if (ref.current && ref.current.rotation) {
