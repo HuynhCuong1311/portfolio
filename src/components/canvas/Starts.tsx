@@ -1,7 +1,7 @@
-import React, { useRef, useState, Suspense } from "react";
+import { PointMaterial, Points, Preload } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random";
+import { Suspense, useRef, useState } from "react";
 import styled from "styled-components";
 import { BufferGeometry, Material, Points as ThreePoints } from "three";
 
@@ -19,7 +19,7 @@ const Starts = (props: StartsProps) => {
   const [sphere] = useState(() =>
     random.inSphere(new Float32Array(5000), { radius: 1.2 }) as Float32Array
   );
-  useFrame((state, delta) => {
+  useFrame((_state, delta) => {
     if (ref.current && ref.current.rotation) {
       ref.current.rotation.x -= delta / 10;
       ref.current.rotation.y -= delta / 15;
