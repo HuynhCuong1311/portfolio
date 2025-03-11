@@ -102,8 +102,8 @@ const SubTitle = styled.p`
   }
 `;
 const ResumeButton = styled.a`
-color:white;
-cursor: pointer;
+  color: white;
+  cursor: pointer;
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
@@ -132,16 +132,16 @@ cursor: pointer;
   border-radius: 50px;
   font-weight: 700;
   font-size: 18px;
-    &:hover {
-        transform: scale(1.05);
+  &:hover {
+    transform: scale(1.05);
     transition: all 0.4s ease-in-out;
-    box-shadow:  20px 20px 60px #1F2634,
+    box-shadow: 20px 20px 60px #1f2634;
     filter: brightness(1);
-    }  
-    @media (max-width: 768px) {
-        padding: 12px 0;
-        font-size: 18px;
-    } 
+  }
+  @media (max-width: 768px) {
+    padding: 12px 0;
+    font-size: 18px;
+  }
 `;
 const Img = styled.img`
   border-radius: 50%;

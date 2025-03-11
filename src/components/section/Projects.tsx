@@ -6,7 +6,7 @@ import ProjectCard from "../cards/ProjectCard";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-contnet: center;
+  justify-content: center;
   margin-top: 50px;
   padding: 0px 16px;
   position: rlative;
@@ -54,11 +54,11 @@ const ToggleButtonGroup = styled.div`
   color: ${({ theme }) => theme.primary};
   font-size: 16px;
   border-radius: 12px;
-font-weight 500;
-margin: 22px 0;
-@media (max-width: 768px){
+  font-weight: 500;
+  margin: 22px 0;
+  @media (max-width: 768px) {
     font-size: 12px;
-}
+  }
 `;
 const ToggleButton = styled.div<{ active: boolean }>`
   padding: 8px 18px;
@@ -121,17 +121,17 @@ const Projects = () => {
           </ToggleButton>
           <Divider />
           <ToggleButton
-            active={toggle === "android app"}
-            onClick={() => setToggle("android app")}
+            active={toggle === "front end"}
+            onClick={() => setToggle("front end")}
           >
-            ANDROID APP'S
+            FRONT END
           </ToggleButton>
           <Divider />
           <ToggleButton
-            active={toggle === "machine learning"}
-            onClick={() => setToggle("machine learning")}
+            active={toggle === "back end"}
+            onClick={() => setToggle("back end")}
           >
-            MACHINE LEARNING
+            BACK END
           </ToggleButton>
         </ToggleButtonGroup>
 

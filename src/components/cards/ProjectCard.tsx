@@ -4,7 +4,8 @@ const Card = styled.div`
   width: 330px;
   height: 490px;
   background-color: ${({ theme }) => theme.card};
-  cursor: pointer;
+  position: relative;
+
   border-radius: 10px;
   box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.4);
   overflow: hidden;
@@ -72,6 +73,14 @@ const Description = styled.div`
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
+  &:hover + .tooltip {
+    box-shadow: 0 0 50px 4px rgba(0, 0, 0, 0.6);
+    visibility: visible;
+    opacity: 1;
+  }
+  &:hover {
+    opacity: 0;
+  }
 `;
 const Members = styled.div`
   display: flex;
@@ -92,6 +101,55 @@ const Button = styled.a`
   text-decoration: none;
   font-weight: 600;
   text-align: center;
+  cursor: pointer;
+`;
+
+const Tooltip = styled.div`
+  border-radius: 10px;
+  box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.4);
+  padding: 26px 20px;
+
+  flex-direction: column;
+  gap: 14px;
+  /* transition: all 0.5s ease-in-out; */
+
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  /* top: 0; */
+  left: 0;
+  /* right: 0; */
+  bottom: 200px;
+  background-color: #010101;
+  color: ${({ theme }) => theme.text_secondary + 99};
+  /* padding: 8px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transition: opacity 0.3s;
+`;
+
+const Skills = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  margin-top: -10px;
+`;
+
+const Skill = styled.div`
+  font-size: 15px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.text_primary + 99};
+  @media only screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+`;
+
+const ItemWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 `;
 
 const ProjectCard = ({
@@ -103,7 +161,9 @@ const ProjectCard = ({
     date: string;
     description: string;
     member?: { img: string }[];
-    github: string;
+    github?: string;
+    webapp: string;
+    tags?: string[];
   };
 }) => {
   return (
@@ -114,14 +174,26 @@ const ProjectCard = ({
         <Title>{project.title}</Title>
         <Date>{project.date}</Date>
         <Description>{project.description}</Description>
+        <Tooltip className="tooltip">
+          {project.description}
+          <br />
+          <Skills>
+            <b>Skills</b>
+            <ItemWrapper>
+              {project?.tags?.map((skill) => (
+                <Skill>• {skill}</Skill>
+              ))}
+            </ItemWrapper>
+          </Skills>
+        </Tooltip>
       </Details>
       <Members>
         {project.member?.map((member) => (
           <Avatar src={member.img} />
         ))}
       </Members>
-      <Button href={project.github} target="_blank">
-        View Code
+      <Button href={project.webapp} target="_blank">
+        View
       </Button>
     </Card>
   );
