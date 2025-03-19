@@ -12,7 +12,7 @@ export const Bio = {
     "I am a motivated and versatile Web Developer in building modern web applications, enhancing user experience, and optimizing website performance. With a passion for learning and a commitment to delivering high-quality results, I continuously seek opportunities to improve my skills and enhance work efficiency. My positive attitude and growth mindset enable me to excel in teamwork, problem-solving, and adapting to new challenges. I am ready to make a meaningful contribution and achieve great things.",
   github: "https://github.com/HuynhCuong1311",
   resume:
-    "https://drive.google.com/file/d/1NaTFrWRAtjFWqjGtYOjS_NWJQP-vyUpy/view?usp=drive_link",
+    "https://drive.google.com/file/d/1PXgmyyLQrgFuneZeurlb6RxxFCZkCzbr/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/huynhquangcuong/",
   facebook: "https://www.facebook.com/HuynhQuangCuong",
 };
